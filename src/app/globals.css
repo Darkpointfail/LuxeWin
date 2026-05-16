@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* v2 tokens */
+  --void: #050507;
+  /* Espace laissé au-dessus de la barre de navigation fixe (hauteur approx. + encoche). */
+  --app-nav-pad-bottom: calc(5.25rem + env(safe-area-inset-bottom, 0px));
+  --surface: #111111;
+  --surface-raised: #1a1a1a;
+  --border: rgba(255, 255, 255, 0.08);
+  --gold: #c8a951;
+  --gold-muted: rgba(200, 169, 81, 0.15);
+  --gold-text: #f0d080;
+  --urgence: #e8402a;
+  --safe: #2ecc71;
+  --info: #4a9eff;
+  --white: #f5f3ee;
+  --muted: rgba(255, 255, 255, 0.45);
+  --ghost: rgba(255, 255, 255, 0.12);
+  --gold-light: #f0d080;
+  --gold-dark: #8b6914;
+  --black: #050507;
+  --off-white: #f5f3ee;
+  --charcoal: #111111;
+  --smoke: #1a1a1a;
+  --red-urgence: #e8402a;
+  --background: #050507;
+  --foreground: #f5f3ee;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--void);
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* Clics / taps plus réactifs (moins d’attente tactile, pas de zoom double-tap) */
+@layer base {
+  button,
+  [role="button"],
+  a[href],
+  input[type="submit"],
+  summary {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(200, 169, 81, 0.12);
+  }
+
+  input,
+  textarea,
+  select {
+    font-size: inherit;
+  }
+
+  @media (max-width: 640px) {
+    input:not([type="checkbox"]):not([type="radio"]),
+    textarea,
+    select {
+      font-size: 1rem;
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /** Padding bas cohérent avec la navigation fixe + safe area iOS. */
+  .pb-app-nav {
+    padding-bottom: var(--app-nav-pad-bottom);
+  }
+}
+
+.noise-overlay {
+  position: relative;
+}
+
+.noise-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.35;
+  background-image: radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 255, 255, 0.06) 0%,
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(255, 255, 255, 0.05) 0%,
+      transparent 38%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.015) 2px,
+      rgba(255, 255, 255, 0.015) 3px
+    );
+}
+
+.shimmer-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-120%);
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 45%,
+    transparent 70%
+  );
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+
+.shimmer-hover:hover::after {
+  transform: translateX(120%);
+}
+
+/* Atmospheric drift for fullscreen feed moments */
+@keyframes dust-float {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    opacity: 0.55;
+    transform: translate3d(-6px, -10px, 0);
+  }
+}
+
+.feed-atmosphere {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  opacity: 0.55;
+  mix-blend-mode: soft-light;
+  background-image:
+    radial-gradient(ellipse 120% 80% at 70% 15%, rgba(200, 169, 81, 0.14), transparent 52%),
+    radial-gradient(ellipse 90% 60% at 10% 75%, rgba(255, 255, 255, 0.06), transparent 48%);
+  animation: dust-float 14s ease-in-out infinite;
+}
+
+.feed-light-sweep {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  opacity: 0.22;
+  mix-blend-mode: overlay;
+}
+
+/* TikTok-style vertical feed on mobile */
+.snap-feed {
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.snap-feed-item {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* Grain cinéma léger (GPU-friendly) */
+.cinematic-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  mix-blend-mode: overlay;
+}
