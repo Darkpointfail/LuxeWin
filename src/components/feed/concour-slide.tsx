@@ -3,12 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Heart, Share2, Info, Lock } from "lucide-react";
-import { toast } from "sonner";
+import { Lock } from "lucide-react";
 import type { Lot } from "@/lib/types";
 import { feedMoodForLot, FEED_WHISPER_LINES } from "@/lib/data";
 import { formatUsd } from "@/lib/format-display";
-import { useFeedStore } from "@/stores/feed-store";
 import { cn } from "@/lib/utils";
 import { lotUsesVideo } from "@/lib/lot-media";
 import { lotFeedHeroPhoto, lotFeedPoster, preloadLotMedia } from "@/lib/feed-media";
@@ -58,34 +56,7 @@ export function ConcourSlide({ lot, slideIndex, activeIndex, isActive, onExpand 
     playbackRate: lot.media.playbackRate ?? 1,
     onPlaying: () => setVideoReady(true),
   });
-  const likedLotIds = useFeedStore((s) => s.likedLotIds);
-  const toggleLikeLot = useFeedStore((s) => s.toggleLikeLot);
-  const liked = likedLotIds.includes(lot.id);
   const whisper = FEED_WHISPER_LINES[slideIndex % FEED_WHISPER_LINES.length]!;
-
-  const share = async () => {
-    const origin =
-      typeof window !== "undefined" ? window.location.origin : "";
-    const url = `${origin}/concours/${lot.id}`;
-    const text = `${lot.tagline}, ${lot.titre} · Gaviom`;
-
-    if (typeof navigator !== "undefined" && navigator.share) {
-      try {
-        await navigator.share({ title: "Gaviom", text, url });
-        return;
-      } catch (e) {
-        if ((e as Error).name === "AbortError") return;
-      }
-    }
-
-    const clip = `${text}\n${url}`;
-    try {
-      await navigator.clipboard.writeText(clip);
-      toast.success("Link copied to clipboard");
-    } catch {
-      toast.error("Couldn’t copy link");
-    }
-  };
 
   return (
     <div className="relative h-[100dvh] w-full shrink-0 snap-start snap-always overflow-hidden bg-void">
@@ -165,46 +136,6 @@ export function ConcourSlide({ lot, slideIndex, activeIndex, isActive, onExpand 
             Inner circle
           </span>
         )}
-      </div>
-
-      <div className="absolute bottom-[max(8rem,calc(5.75rem+env(safe-area-inset-bottom,0px)))] right-[max(0.75rem,calc(env(safe-area-inset-right,0px)+8px))] z-30 flex flex-col items-center gap-5 md:bottom-32">
-        <motion.button
-          type="button"
-          whileTap={{ scale: 1.18 }}
-          transition={{ type: "spring", stiffness: 650, damping: 32, mass: 0.35 }}
-          onClick={() => toggleLikeLot(lot.id)}
-          className="flex touch-manipulation flex-col items-center gap-1 text-[var(--white)]"
-          aria-label={liked ? "Remove from favorites" : "Save to favorites"}
-          aria-pressed={liked}
-        >
-          <Heart
-            className={cn(
-              "h-8 w-8 drop-shadow-[0_4px_24px_rgba(0,0,0,0.65)]",
-              liked && "fill-urgence text-urgence"
-            )}
-          />
-        </motion.button>
-        <button
-          type="button"
-          onClick={() => void share()}
-          className="flex touch-manipulation flex-col items-center gap-1 text-[var(--white)] transition-opacity duration-100 active:opacity-70"
-          aria-label="Share"
-        >
-          <Share2 className="h-7 w-7 drop-shadow-[0_4px_24px_rgba(0,0,0,0.65)]" />
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            onExpand();
-            if (typeof navigator !== "undefined" && navigator.vibrate) {
-              navigator.vibrate(30);
-            }
-          }}
-          className="flex touch-manipulation flex-col items-center gap-1 text-[var(--white)] transition-opacity duration-100 active:opacity-70"
-          aria-label="Full story"
-        >
-          <Info className="h-7 w-7 drop-shadow-[0_4px_24px_rgba(0,0,0,0.65)]" />
-        </button>
       </div>
 
       <motion.div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 px-4 pb-[max(7rem,calc(5.5rem+env(safe-area-inset-bottom,0px)))] pt-36 sm:px-6 md:px-10">
