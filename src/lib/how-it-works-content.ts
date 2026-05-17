@@ -6,26 +6,26 @@ export type HowItWorksStep = {
 
 export const HOW_IT_WORKS_STEPS: HowItWorksStep[] = [
   {
-    title: "Explore the prize",
-    body: "Cinematic visuals, line-by-line itinerary, estimated value, you know exactly what you’re entering for.",
+    title: "Pick a prize",
+    body: "Each contest lists the exact prize, estimated value, ticket price, and closing date , no surprises at checkout.",
   },
   {
-    title: "Choose your entries",
-    body: "Stack transparently. Every entry is numbered, tracked, and reflected live as the drop fills.",
+    title: "Buy your tickets",
+    body: "Every ticket is numbered and tied to your account. Stack as many as you want before entries close.",
   },
   {
-    title: "Secure checkout",
-    body: "Encrypted transactions, trusted processors, no data hoarding beyond what fulfillment requires.",
+    title: "Pay securely",
+    body: "Encrypted checkout through trusted processors. Free postal entry is available where required by law.",
   },
   {
-    title: "Close & verified draw",
-    body: "When the countdown ends, our supervised protocol runs, timestamped, auditable, published.",
+    title: "Verified random draw",
+    body: "When the contest closes, we run a certified random draw (Random.org), timestamped and auditable.",
   },
   {
-    title: "Winner announced",
-    body: "Direct outreach, ID verification, then white-glove delivery or experience coordination.",
+    title: "Winner announced on camera",
+    body: "We verify ID, film the announcement, and deliver the prize , or the cash equivalent if you prefer.",
   },
 ];
 
-/** Ultra-short rhythm for feed / chips (same order as steps 1→3 highlights). */
-export const HOW_IT_WORKS_MICRO_LINE = "Pick a drop · Pay securely · Verified draw";
+/** Ultra-short rhythm for feed / chips. */
+export const HOW_IT_WORKS_MICRO_LINE = "Buy tickets · Random draw · One winner";

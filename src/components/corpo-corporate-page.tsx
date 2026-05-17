@@ -8,8 +8,8 @@ import { cn } from "@/lib/utils";
 import { BRAND } from "@/lib/brand";
 
 const GOLD = "#C9A84C";
-const BG = "#111111";
-const DARK = "#1A1A1A";
+const BG = "#0F0E0C";
+const DARK = "#1A1815";
 const WHITE = "#FAFAF8";
 
 const CORPO_EMAIL = BRAND.corpoEmail;
@@ -110,14 +110,14 @@ function serifClass() {
 
 function cardSurfaceClass() {
   return cn(
-    "rounded-lg border border-white/[0.08] bg-[#1A1A1A] transition-all duration-300",
+    "rounded-lg border border-white/[0.08] bg-surface transition-all duration-300",
     "hover:-translate-y-1 hover:border-[#C9A84C]/55"
   );
 }
 
 function pillClass() {
   return cn(
-    "rounded-lg border border-white/[0.1] bg-[#111]/90 px-2.5 py-1 text-[12px] font-medium leading-none text-white/80",
+    "rounded-lg border border-white/[0.1] bg-void/90 px-2.5 py-1 text-[12px] font-medium leading-none text-white/80",
     "tracking-tight"
   );
 }
@@ -147,7 +147,7 @@ function DemoForm() {
   return (
     <form
       onSubmit={submit}
-      className="mx-auto max-w-md space-y-5 rounded-lg border border-white/[0.1] bg-[#1A1A1A]/95 p-6 backdrop-blur-sm sm:p-8"
+      className="mx-auto max-w-md space-y-5 rounded-lg border border-white/[0.1] bg-surface/95 p-6 backdrop-blur-sm sm:p-8"
     >
       <div>
         <label htmlFor="corp-name" className="mb-2 block text-[13px] font-medium text-white/75">
@@ -160,7 +160,7 @@ function DemoForm() {
           autoComplete="organization"
           value={company}
           onChange={(e) => setCompany(e.target.value)}
-          className="w-full rounded-lg border border-white/[0.12] bg-[#111] px-3 py-2.5 text-[15px] outline-none ring-0 transition-[border-color] focus:border-[#C9A84C]/70"
+          className="w-full rounded-lg border border-white/[0.12] bg-void px-3 py-2.5 text-[15px] outline-none ring-0 transition-[border-color] focus:border-[#C9A84C]/70"
         />
       </div>
       <div>
@@ -175,7 +175,7 @@ function DemoForm() {
           autoComplete="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full rounded-lg border border-white/[0.12] bg-[#111] px-3 py-2.5 text-[15px] outline-none focus:border-[#C9A84C]/70"
+          className="w-full rounded-lg border border-white/[0.12] bg-void px-3 py-2.5 text-[15px] outline-none focus:border-[#C9A84C]/70"
         />
       </div>
       <div>
@@ -187,7 +187,7 @@ function DemoForm() {
           name="headcount"
           value={headcount}
           onChange={(e) => setHeadcount(e.target.value)}
-          className="w-full rounded-lg border border-white/[0.12] bg-[#111] px-3 py-2.5 text-[15px] outline-none focus:border-[#C9A84C]/70"
+          className="w-full rounded-lg border border-white/[0.12] bg-void px-3 py-2.5 text-[15px] outline-none focus:border-[#C9A84C]/70"
         >
           <option value="10-50">10–50</option>
           <option value="51-250">51–250</option>
@@ -217,10 +217,10 @@ export function CorpoCorporatePage() {
           className="object-cover object-[50%_28%]"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[#111]/78" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#111]/55 via-[#111]/20 to-[#111]" />
+        <div className="absolute inset-0 bg-void/78" />
+        <div className="absolute inset-0 bg-gradient-to-b from-void/55 via-void/20 to-void" />
 
-        <header className="relative z-20 border-b border-white/[0.08] bg-[#111]/25 px-5 py-4 backdrop-blur-md sm:px-8">
+        <header className="relative z-20 border-b border-white/[0.08] bg-void/25 px-5 py-4 backdrop-blur-md sm:px-8">
           <div className="mx-auto flex max-w-5xl items-center justify-between">
             <div className="flex flex-col">
               <span className={cn(serifClass(), "text-lg font-medium tracking-wide")} style={{ color: GOLD }}>
@@ -271,7 +271,7 @@ export function CorpoCorporatePage() {
             >
               <a
                 href="#offres"
-                className="inline-flex items-center justify-center rounded-lg border border-[#C9A84C]/45 bg-[#111]/50 px-8 py-3 text-[14px] font-medium text-[#C9A84C] backdrop-blur-sm transition-colors hover:border-[#C9A84C]/75 hover:bg-[#111]/70"
+                className="inline-flex items-center justify-center rounded-lg border border-[#C9A84C]/45 bg-void/50 px-8 py-3 text-[14px] font-medium text-[#C9A84C] backdrop-blur-sm transition-colors hover:border-[#C9A84C]/75 hover:bg-void/70"
               >
                 View packages ↓
               </a>
@@ -347,7 +347,7 @@ export function CorpoCorporatePage() {
                     className="object-cover object-center"
                     sizes="(max-width:640px) 100vw, 50vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#111]/80 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-void/80 to-transparent" />
                   <figcaption className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
                     <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-[#C9A84C]/90">Travel</span>
                     <p className="mt-1 text-[13px] text-white/70">Horizons, mileage, that “elsewhere” feeling.</p>
@@ -370,7 +370,7 @@ export function CorpoCorporatePage() {
                     className="object-cover object-[50%_60%]"
                     sizes="(max-width:640px) 100vw, 50vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#111]/80 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-void/80 to-transparent" />
                   <figcaption className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
                     <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-[#C9A84C]/90">Experiences</span>
                     <p className="mt-1 text-[13px] text-white/70">Stays and moments people replay in conversation.</p>
@@ -443,7 +443,7 @@ export function CorpoCorporatePage() {
                   variants={fadeUp}
                   transition={{ delay: ci * 0.05 }}
                   className={cn(
-                    "flex h-full flex-col overflow-hidden rounded-lg border border-white/[0.1] bg-[#161616] transition-all duration-300",
+                    "flex h-full flex-col overflow-hidden rounded-lg border border-white/[0.1] bg-surface transition-all duration-300",
                     "hover:-translate-y-1 hover:border-[#C9A84C]/45 hover:shadow-[0_28px_60px_-28px_rgba(0,0,0,0.85)]"
                   )}
                 >
@@ -455,8 +455,8 @@ export function CorpoCorporatePage() {
                       className="object-cover"
                       sizes="(max-width:1024px) 100vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#161616] via-[#161616]/20 to-transparent" />
-                    <div className="absolute left-4 top-4 rounded-lg border border-white/15 bg-[#111]/75 px-2.5 py-1 backdrop-blur-sm">
+                    <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent" />
+                    <div className="absolute left-4 top-4 rounded-lg border border-white/15 bg-void/75 px-2.5 py-1 backdrop-blur-sm">
                       <span className="text-[11px] font-semibold uppercase tracking-[0.14em]" style={{ color: GOLD }}>
                         {cat.range}
                       </span>
@@ -496,8 +496,8 @@ export function CorpoCorporatePage() {
               className="object-cover object-[50%_35%]"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-[#111]/92" />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#111]/40 to-[#111]" />
+            <div className="absolute inset-0 bg-void/92" />
+            <div className="absolute inset-0 bg-gradient-to-b from-void/40 to-void" />
           </div>
           <div className="relative z-10 mx-auto max-w-lg text-center">
             <motion.h2

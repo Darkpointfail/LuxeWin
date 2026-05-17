@@ -9,6 +9,11 @@ type Props = {
   className?: string;
   nameClassName?: string;
   taglineClassName?: string;
+  subTaglineClassName?: string;
+  /** Second line under the main tagline (stacked variant only). */
+  showSubTagline?: boolean;
+  /** Primary tagline under the name (stacked variant only). */
+  showTagline?: boolean;
 };
 
 export function BrandMark({
@@ -17,6 +22,9 @@ export function BrandMark({
   className,
   nameClassName,
   taglineClassName,
+  subTaglineClassName,
+  showSubTagline = false,
+  showTagline = true,
 }: Props) {
   const inner =
     variant === "nameOnly" ? (
@@ -38,18 +46,30 @@ export function BrandMark({
         </span>
       </span>
     ) : (
-      <span className={cn("flex flex-col gap-0.5", className)}>
+      <span className={cn("flex flex-col items-center gap-0.5", className)}>
         <span className={cn("font-display font-semibold tracking-tight", nameClassName)}>
           {BRAND.name}
         </span>
-        <span
-          className={cn(
-            "text-[10px] font-medium uppercase tracking-[0.18em] text-white/45",
-            taglineClassName
-          )}
-        >
-          {BRAND.tagline}
-        </span>
+        {showTagline ? (
+          <span
+            className={cn(
+              "text-[10px] font-medium uppercase tracking-[0.18em] text-white/45",
+              taglineClassName
+            )}
+          >
+            {BRAND.tagline}
+          </span>
+        ) : null}
+        {showSubTagline ? (
+          <span
+            className={cn(
+              "text-[9px] font-normal normal-case tracking-[0.04em] text-white/50",
+              subTaglineClassName
+            )}
+          >
+            {BRAND.taglineSecondary}
+          </span>
+        ) : null}
       </span>
     );
 

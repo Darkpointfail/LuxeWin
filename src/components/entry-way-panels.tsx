@@ -60,7 +60,7 @@ export function PostalEntryPanel({
       <address
         className={
           isConf
-            ? "rounded-lg border border-[#C9A84C]/25 bg-[#1A1A1A] px-4 py-3 font-mono text-[12px] not-italic leading-relaxed text-white/90"
+            ? "rounded-lg border border-[#C9A84C]/25 bg-surface px-4 py-3 font-mono text-[12px] not-italic leading-relaxed text-white/90"
             : "rounded-xl border border-gold/20 bg-[var(--void)]/60 px-4 py-3 font-mono text-[12px] not-italic leading-relaxed text-[var(--white)]/90"
         }
       >

@@ -58,7 +58,7 @@ function availabilityRibbon(sold: number, total: number) {
   const r = total > 0 ? sold / total : 0;
   if (r >= 0.92) return { label: "Final spots remaining", key: "last" as const };
   if (r >= 0.72) return { label: "Almost sold out", key: "hot" as const };
-  if (r <= 0.14) return { label: "New drop", key: "new" as const };
+  if (r <= 0.14) return { label: "New contest", key: "new" as const };
   return { label: "Entries open", key: "open" as const };
 }
 
@@ -290,14 +290,14 @@ export function ConcoursLotView({ serialized }: Props) {
   };
 
   return (
-    <div className="min-h-screen bg-[#030303] pb-[calc(5.5rem+env(safe-area-inset-bottom))] text-[var(--off-white)] lg:pb-0">
+    <div className="min-h-screen bg-void pb-[calc(5.5rem+env(safe-area-inset-bottom))] text-[var(--off-white)] lg:pb-0">
       <div className="mx-auto flex max-w-[1680px] flex-col lg:h-[100dvh] lg:flex-row">
         {/* Galerie, sticky desktop, hero mobile */}
         <motion.aside
           className="relative flex w-full shrink-0 flex-col lg:sticky lg:top-0 lg:h-[100dvh] lg:w-[50%] lg:self-start"
         >
           <div className="relative min-h-[100svh] w-full overflow-hidden lg:min-h-0 lg:flex-1">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-br from-surface via-transparent to-transparent" />
             {usesVideo ? (
               <video
                 ref={heroVideoRef}
@@ -326,7 +326,7 @@ export function ConcoursLotView({ serialized }: Props) {
                 />
               </motion.div>
             )}
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#030303] via-[#030303]/40 to-[#030303]/10 lg:from-[#030303]/95 lg:via-[#030303]/35" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-void via-void/40 to-void/10 lg:from-void/95 lg:via-void/35" />
             {!usesVideo ? (
               <div
                 className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_100%,rgba(3,3,3,0.9)_0%,transparent_65%)]"
@@ -512,7 +512,7 @@ export function ConcoursLotView({ serialized }: Props) {
 
               {/* Participation : un seul bloc dans le scroll (mobile + desktop), évite l’écrasement du header sur grand écran */}
               <motion.section
-                className="scroll-mt-8 space-y-4 lg:scroll-mt-10 lg:rounded-2xl lg:border lg:border-white/[0.08] lg:bg-[#080808]/55 lg:p-8 lg:backdrop-blur-sm"
+                className="scroll-mt-8 space-y-4 lg:scroll-mt-10 lg:rounded-2xl lg:border lg:border-white/[0.08] lg:bg-surface/55 lg:p-8 lg:backdrop-blur-sm"
                 {...fadeUp}
                 aria-labelledby="buy-heading"
                 id="participation"
@@ -544,7 +544,7 @@ export function ConcoursLotView({ serialized }: Props) {
                       return (
                         <li key={`${i}-${line}`} className="relative flex gap-4 pb-10 last:pb-0">
                           <div className="relative z-[1] flex shrink-0 flex-col items-center">
-                            <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-[#0a0a0a] text-gold shadow-[0_0_0_3px_#030303]">
+                            <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-surface text-gold shadow-[0_0_0_3px_var(--void)]">
                               <Icon className="h-4 w-4" aria-hidden />
                             </span>
                           </div>
@@ -650,7 +650,7 @@ export function ConcoursLotView({ serialized }: Props) {
                   Published winners for this prize, plus the live scoreboard. Nothing staged as fake alerts.
                 </p>
                 <div className="grid gap-4 lg:grid-cols-2">
-                  <div className="rounded-2xl border border-white/[0.06] bg-[#080808]/50 p-4">
+                  <div className="rounded-2xl border border-white/[0.06] bg-surface/50 p-4">
                     <p className="font-mono text-[10px] uppercase tracking-wide text-[var(--muted)]">
                       Verified payout on record
                     </p>
@@ -681,7 +681,7 @@ export function ConcoursLotView({ serialized }: Props) {
                       </p>
                     )}
                   </div>
-                  <div className="rounded-2xl border border-white/[0.06] bg-[#080808]/50 p-4">
+                  <div className="rounded-2xl border border-white/[0.06] bg-surface/50 p-4">
                     <div className="flex items-end justify-between gap-2">
                       <p className="font-mono text-[10px] uppercase tracking-wide text-[var(--muted)]">
                         Live board
@@ -717,7 +717,7 @@ export function ConcoursLotView({ serialized }: Props) {
 
       {/* Mobile : raccourci paiement lorsque l’onglet Payant est actif */}
       {entryTab === "online" ? (
-        <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-[#030303]/92 px-4 py-3 backdrop-blur-xl lg:hidden pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+        <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-void/92 px-4 py-3 backdrop-blur-xl lg:hidden pb-[max(0.75rem,env(safe-area-inset-bottom))]">
           <div className="mx-auto flex max-w-lg items-center justify-between gap-3">
             <div>
               <p className="font-mono text-[10px] uppercase tracking-wide text-[var(--muted)]">Total</p>
@@ -731,7 +731,7 @@ export function ConcoursLotView({ serialized }: Props) {
       ) : null}
 
       <Dialog open={lightboxOpen} onOpenChange={onLightboxOpenChange}>
-        <DialogContent className="max-w-4xl overflow-visible border-white/10 bg-[#0a0a0a] p-2 sm:p-4">
+        <DialogContent className="max-w-4xl overflow-visible border-white/10 bg-surface p-2 sm:p-4">
           <DialogTitle className="sr-only">Expanded view</DialogTitle>
           <motion.div className="relative z-0 aspect-[16/10] w-full overflow-hidden rounded-lg border border-white/10">
             {usesVideo ? (

@@ -18,7 +18,7 @@ const confirmationSans = DM_Sans({
 export default function EntryConfirmationLayout({ children }: { children: ReactNode }) {
   return (
     <div
-      className={`${confirmationSerif.variable} ${confirmationSans.variable} min-h-screen bg-[#111111] text-[#FAFAF8] antialiased`}
+      className={`${confirmationSerif.variable} ${confirmationSans.variable} min-h-screen bg-void text-[#FAFAF8] antialiased`}
       style={{ fontFamily: "var(--font-corpo-sans), system-ui, sans-serif" }}
     >
       {children}

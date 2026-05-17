@@ -22,7 +22,7 @@ function FeaturedLotCard({ lot, index }: { lot: Lot; index: number }) {
         delay: Math.min(index * 0.06, 0.36),
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="group flex flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0a0a0a] shadow-[0_24px_60px_-40px_rgba(0,0,0,0.85)] transition-[border-color,box-shadow] duration-300 hover:border-gold/25 hover:shadow-[0_28px_70px_-36px_rgba(200,169,81,0.12)]"
+      className="group flex flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-surface shadow-[0_24px_60px_-40px_rgba(0,0,0,0.85)] transition-[border-color,box-shadow] duration-300 hover:border-gold/25 hover:shadow-[0_28px_70px_-36px_rgba(200,169,81,0.12)]"
     >
       <div className="relative aspect-video w-full shrink-0 overflow-hidden">
         <Image
@@ -32,10 +32,10 @@ function FeaturedLotCard({ lot, index }: { lot: Lot; index: number }) {
           className="object-cover object-center transition-[transform,filter] duration-[1.1s] ease-out group-hover:scale-[1.03] group-hover:brightness-[1.03]"
           sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#030303]/45 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-void via-void/45 to-transparent" />
       </div>
 
-      <div className="flex flex-1 flex-col border-t border-white/[0.06] bg-gradient-to-b from-[#0c0c0c] to-[#080808] px-4 pb-5 pt-4 sm:px-5 sm:pb-6">
+      <div className="flex flex-1 flex-col border-t border-white/[0.06] bg-gradient-to-b from-surface to-void px-4 pb-5 pt-4 sm:px-5 sm:pb-6">
         <h2 className="font-serif text-xl font-normal italic leading-snug tracking-tight text-[var(--white)] sm:text-2xl">
           {lot.titre}
         </h2>

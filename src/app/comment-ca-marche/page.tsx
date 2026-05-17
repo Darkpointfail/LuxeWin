@@ -20,15 +20,15 @@ export default function CommentCaMarchePage() {
       animate="visible"
       variants={pageVariants}
     >
-      <PageHeaderMinimal title="How it works" />
+      <PageHeaderMinimal title="How prize draws work" />
       <article className="mx-auto max-w-3xl px-6 pb-12 pt-8">
-        <p className="text-xs uppercase tracking-[0.35em] text-gold/90">Editorial</p>
+        <p className="text-xs uppercase tracking-[0.35em] text-gold/90">Official rules</p>
         <h1 className="mt-4 font-display text-[clamp(2.25rem,5vw,3.75rem)] font-bold italic leading-tight">
-          The Gaviom promise
+          Premium contests. Verified winners.
         </h1>
         <p className="mt-6 text-lg font-light leading-relaxed text-luxe-offwhite/70">
-          Luxury shouldn’t live behind glass forever. We built a calm, legitimate on-ramp, premium drops, verified
-          winners, member support that actually picks up.
+          Gaviom runs legitimate prize draws for luxury experiences and products. Buy tickets, get numbered entries,
+          and when the contest closes we draw one verified winner , on camera, every time.
         </p>
 
         <motion.ol

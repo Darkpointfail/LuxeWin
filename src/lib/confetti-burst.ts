@@ -1,7 +1,7 @@
 import confetti from "canvas-confetti";
 
 export function burstGold() {
-  const colors = ["#C8A951", "#F0D080", "#F5F3EE", "#1A1A1A"];
+  const colors = ["#C8A951", "#F0D080", "#F5F3EE", "#1A1815"];
   void confetti({
     particleCount: 90,
     spread: 72,

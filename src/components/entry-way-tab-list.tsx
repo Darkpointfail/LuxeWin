@@ -63,7 +63,7 @@ export function EntryWayTabListConfirmation({
     <div
       role="tablist"
       aria-label="Entry method and confirmation"
-      className={cn("mb-8 flex w-full gap-0 rounded-lg border border-white/[0.12] bg-[#161616] p-1", className)}
+      className={cn("mb-8 flex w-full gap-0 rounded-lg border border-white/[0.12] bg-surface p-1", className)}
     >
       {TABS.map((tab) => {
         const selected = value === tab.id;
@@ -77,7 +77,7 @@ export function EntryWayTabListConfirmation({
             className={cn(
               "min-h-[44px] flex-1 rounded-md px-2 py-2.5 text-center font-[family-name:var(--font-corpo-sans),system-ui,sans-serif] text-[10px] font-medium uppercase tracking-[0.12em] transition-colors sm:text-[11px]",
               selected
-                ? "bg-[#1A1A1A] text-[#C9A84C] shadow-[inset_0_-2px_0_0_#C9A84C]"
+                ? "bg-surface-raised text-[#C9A84C] shadow-[inset_0_-2px_0_0_#C9A84C]"
                 : "text-white/45 hover:bg-white/[0.04] hover:text-white/75"
             )}
           >

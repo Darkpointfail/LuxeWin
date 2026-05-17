@@ -18,7 +18,7 @@ const corpoSans = DM_Sans({
 export default function CorpoLayout({ children }: { children: ReactNode }) {
   return (
     <div
-      className={`${corpoSerif.variable} ${corpoSans.variable} min-h-screen bg-[#111111] text-[#FAFAF8] antialiased`}
+      className={`${corpoSerif.variable} ${corpoSans.variable} min-h-screen bg-void text-[#FAFAF8] antialiased`}
       style={{ fontFamily: "var(--font-corpo-sans), system-ui, sans-serif" }}
     >
       {children}

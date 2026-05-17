@@ -14,8 +14,8 @@ function tPublished(hoursAgo: number) {
 export const LOTS: Lot[] = [
   {
     id: "vegas-travel-credit",
-    titre: "48 hours in Vegas you'll never forget.",
-    tagline: "Neon, suites, and the version of you that only exists after midnight.",
+    titre: "Win $5,500 Vegas getaway",
+    tagline: "48 hours on the Strip , buy tickets, one verified winner takes it all.",
     categorie: "experience",
     contestType: "travel",
     travelCredit: 5500,
@@ -64,8 +64,8 @@ export const LOTS: Lot[] = [
   },
   {
     id: "iphone-17-pro-max",
-    titre: "The pocket upgrade everyone's filming on.",
-    tagline: "Pro optics. All-night stamina. Notifications that feel expensive.",
+    titre: "Win iPhone 17 Pro Max",
+    tagline: "Factory-sealed prize · random draw when entries close.",
     categorie: "digital",
     partenaire: {
       nom: "Apple",
@@ -99,8 +99,8 @@ export const LOTS: Lot[] = [
   },
   {
     id: "luxury-cruise-two",
-    titre: "The kind of trip people post for years.",
-    tagline: "Seven nights where the only agenda is horizon, deck, repeat.",
+    titre: "Win a 7-night luxury cruise",
+    tagline: "Balcony suite for two , one ticket could win the whole voyage.",
     categorie: "experience",
     partenaire: {
       nom: "Gaviom Voyages",
@@ -146,9 +146,9 @@ export const LOTS: Lot[] = [
   },
   {
     id: "supercar-experience",
-    titre: "One drive. Main character energy.",
+    titre: "Win a supercar track day",
     tagline:
-      "Circuit metal. Instructor pace. The lap you'll replay behind closed eyes.",
+      "GT3, Ferrari, or Lamborghini on a closed circuit , one winner, verified draw.",
     categorie: "experience",
     partenaire: {
       nom: "Gaviom Motorsport",
@@ -211,12 +211,12 @@ export function categorieLabel(c: Lot["categorie"]): string {
 /** Feed / Explore mood chip, cinematic, not categorical inventory. */
 export function feedMoodForLot(lot: Lot): string {
   const moods: Record<string, string> = {
-    "vegas-travel-credit": "Neon escape",
-    "iphone-17-pro-max": "Status hit",
-    "luxury-cruise-two": "Sea dream",
-    "supercar-experience": "Pure adrenaline",
+    "vegas-travel-credit": "Travel prize",
+    "iphone-17-pro-max": "Tech prize",
+    "luxury-cruise-two": "Cruise prize",
+    "supercar-experience": "Drive prize",
   };
-  return moods[lot.id] ?? "Experience";
+  return moods[lot.id] ?? "Prize contest";
 }
 
 export type ExploreMoodPreset = {
@@ -228,42 +228,42 @@ export type ExploreMoodPreset = {
 };
 
 export const EXPLORE_MOOD_PRESETS: ExploreMoodPreset[] = [
-  { id: "all", label: "Full runway", hint: "Everything playing now", filter: () => true },
+  { id: "all", label: "All contests", hint: "Every live prize draw", filter: () => true },
   {
     id: "trending",
-    label: "Trending tonight",
-    hint: "What timelines want",
+    label: "Trending draws",
+    hint: "Filling fast tonight",
     filter: (l) => ["vegas-travel-credit", "iphone-17-pro-max"].includes(l.id),
   },
   {
     id: "escapes",
-    label: "Luxury escapes",
-    hint: "Skyline · swell · suite life",
+    label: "Travel prizes",
+    hint: "Vegas · cruise · getaways",
     filter: (l) => ["vegas-travel-credit", "luxury-cruise-two"].includes(l.id),
   },
   {
     id: "adrenaline",
-    label: "Adrenaline",
-    hint: "Rubber · horsepower · heartbeat",
+    label: "Thrill prizes",
+    hint: "Track days & horsepower",
     filter: (l) => l.id === "supercar-experience",
   },
   {
     id: "status",
-    label: "Status symbols",
-    hint: "What stops thumbs mid-scroll",
+    label: "Tech & flex",
+    hint: "Phones & headline gear",
     filter: (l) => l.id === "iphone-17-pro-max",
   },
 ];
 
 /** Rotating footer micro-lines on feed slides, emotional, non-transactional. */
 export const FEED_WHISPER_LINES = [
-  "Tonight could change everything.",
-  "Your next story starts here.",
-  "Not everyone gets this kind of moment.",
-  "This summer could look different.",
-  "Someone will wake up in that suite.",
-  "What if this becomes your camera roll?",
-  "Stay until the drop breathes.",
+  "One ticket. One winner. Could be you.",
+  "Every entry gets a number , one number wins the prize.",
+  "Verified random draw when entries close.",
+  "Prize filmed and announced on camera.",
+  "Free postal entry available , see official rules.",
+  "Stack tickets to improve your odds.",
+  "Premium prizes. Legitimate draws. Real winners.",
 ] as const;
 
 /** UI filters, category order, framed as discovery, not inventory. */

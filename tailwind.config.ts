@@ -11,21 +11,26 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        void: "#050507",
+        void: "#0F0E0C",
+        navy: {
+          DEFAULT: "#0F0E0C",
+          card: "#1A1815",
+          raised: "#252219",
+        },
         surface: {
-          DEFAULT: "#111111",
-          raised: "#1A1A1A",
+          DEFAULT: "#1A1815",
+          raised: "#252219",
         },
         gold: {
-          DEFAULT: "#C8A951",
-          light: "#F0D080",
-          dark: "#8B6914",
+          DEFAULT: "#F0C040",
+          light: "#F5D060",
+          dark: "#C49A20",
         },
         luxe: {
-          black: "#080808",
-          charcoal: "#111111",
-          smoke: "#1A1A1A",
-          offwhite: "#F5F3EE",
+          black: "#0F0E0C",
+          charcoal: "#1A1815",
+          smoke: "#252219",
+          offwhite: "#F0EBE3",
         },
         urgency: "#E8402A",
         safe: "#2ECC71",
@@ -39,11 +44,14 @@ const config: Config = {
       },
       backgroundImage: {
         "gold-gradient":
-          "linear-gradient(90deg, #8B6914 0%, #C9A84C 45%, #F0D080 100%)",
+          "linear-gradient(90deg, #C49A20 0%, #F0C040 50%, #F5D060 100%)",
+        "feed-image-fade":
+          "linear-gradient(to top, rgba(15, 14, 12, 0.88) 0%, transparent 55%)",
       },
       boxShadow: {
-        "gold-glow":
-          "0 0 0 1px rgba(201, 168, 76, 0.35), 0 20px 50px -12px rgba(201, 168, 76, 0.25)",
+        "gold-glow": "0 0 12px rgba(240, 192, 64, 0.4)",
+        "gold-glow-lg":
+          "0 0 0 1px rgba(240, 192, 64, 0.35), 0 0 20px rgba(240, 192, 64, 0.35), 0 20px 50px -12px rgba(240, 192, 64, 0.2)",
       },
       keyframes: {
         "accordion-down": {
@@ -75,12 +83,16 @@ const config: Config = {
         "glow-breathe": {
           "0%, 100%": {
             boxShadow:
-              "0 0 20px rgba(201, 168, 76, 0.25), 0 0 40px rgba(201, 168, 76, 0.08)",
+              "0 0 12px rgba(240, 192, 64, 0.35), 0 0 24px rgba(240, 192, 64, 0.12)",
           },
           "50%": {
             boxShadow:
-              "0 0 28px rgba(201, 168, 76, 0.45), 0 0 60px rgba(201, 168, 76, 0.15)",
+              "0 0 16px rgba(240, 192, 64, 0.55), 0 0 32px rgba(240, 192, 64, 0.2)",
           },
+        },
+        "live-pulse": {
+          "0%, 100%": { opacity: "1", transform: "scale(1)" },
+          "50%": { opacity: "0.55", transform: "scale(0.92)" },
         },
         marquee: {
           "0%": { transform: "translateX(0)" },
@@ -114,6 +126,7 @@ const config: Config = {
         "shake-soft": "shake-soft 0.5s ease-in-out",
         "spin-slow": "spin-slow 2.8s linear infinite",
         "pulse-urgent": "pulse-urgent 1.2s ease-in-out infinite",
+        "live-pulse": "live-pulse 1.8s ease-in-out infinite",
       },
     },
   },

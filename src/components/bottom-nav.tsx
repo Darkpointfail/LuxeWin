@@ -6,7 +6,7 @@ import { Clapperboard, LayoutGrid, Trophy, Ticket, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const items = [
-  { href: "/", label: "Feed", icon: Clapperboard },
+  { href: "/", label: "Draws", icon: Clapperboard },
   { href: "/categories", label: "Explore", icon: LayoutGrid },
   { href: "/gagnants", label: "Winners", icon: Trophy },
   { href: "/mes-tickets", label: "Entries", icon: Ticket },

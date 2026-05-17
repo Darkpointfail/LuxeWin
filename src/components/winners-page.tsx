@@ -50,7 +50,7 @@ export function WinnersPage() {
 
   return (
     <motion.div
-      className="min-h-screen bg-[#030303] pb-[calc(7rem+env(safe-area-inset-bottom))] pt-[max(4.5rem,env(safe-area-inset-top)+3rem)] text-[var(--off-white)] lg:pb-28"
+      className="min-h-screen bg-void pb-[calc(7rem+env(safe-area-inset-bottom))] pt-[max(4.5rem,env(safe-area-inset-top)+3rem)] text-[var(--off-white)] lg:pb-28"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
@@ -64,10 +64,10 @@ export function WinnersPage() {
           aria-hidden
         />
         <h1 className="font-serif text-[clamp(2rem,8vw,3.25rem)] font-normal italic leading-[1.05] tracking-tight text-[var(--white)]">
-          Winners
+          Contest winners
         </h1>
         <p className="mx-auto mt-4 max-w-xl font-display text-sm font-light leading-relaxed text-[var(--muted)] sm:text-[15px]">
-          Every draw is real. Every winner is verified. Every story is filmed.
+          Every prize draw is real. Every winner is verified on camera. Every announcement is published.
         </p>
       </motion.header>
 
@@ -88,13 +88,13 @@ export function WinnersPage() {
             Be the first name on this page.
           </h2>
           <p className="mx-auto mt-5 max-w-md font-display text-sm font-light leading-relaxed text-[var(--muted)] sm:text-[15px]">
-            No winners yet. The first drop is live.
+            No winners yet. The first contests are live.
             <br />
-            Your name could be the one that starts it all.
+            Buy a ticket , your name could be the first one here.
           </p>
           <motion.div className="mt-8" {...fade}>
             <GoldButton asChild size="lg">
-              <Link href="/">Enter a drop →</Link>
+              <Link href="/">Enter a contest →</Link>
             </GoldButton>
           </motion.div>
         </motion.div>

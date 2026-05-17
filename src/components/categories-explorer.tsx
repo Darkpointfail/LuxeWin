@@ -197,9 +197,9 @@ function CategoryLotCard({ lot, index }: { lot: Lot; index: number }) {
         delay: Math.min(index * 0.06, 0.36),
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0a0a0a] shadow-[0_24px_60px_-40px_rgba(0,0,0,0.85)] transition-[border-color,box-shadow] duration-300 hover:border-gold/25 hover:shadow-[0_28px_70px_-36px_rgba(200,169,81,0.12)]"
+      className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-surface shadow-[0_24px_60px_-40px_rgba(0,0,0,0.85)] transition-[border-color,box-shadow] duration-300 hover:border-gold/25 hover:shadow-[0_28px_70px_-36px_rgba(200,169,81,0.12)]"
     >
-      <Link href={`/concours/${lot.id}`} className="block outline-none focus-visible:ring-2 focus-visible:ring-gold/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#030303]">
+      <Link href={`/concours/${lot.id}`} className="block outline-none focus-visible:ring-2 focus-visible:ring-gold/40 focus-visible:ring-offset-2 focus-visible:ring-offset-void">
         <div className="relative aspect-[16/11] w-full overflow-hidden sm:aspect-[16/10]">
           <Image
             src={lot.media.posterUrl}
@@ -208,7 +208,7 @@ function CategoryLotCard({ lot, index }: { lot: Lot; index: number }) {
             className="object-cover object-[50%_28%] transition-[transform,filter] duration-[1.1s] ease-out group-hover:scale-[1.04] group-hover:brightness-[1.03] md:object-center"
             sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#030303]/55 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-void via-void/55 to-transparent" />
           <div className="absolute left-3 top-3 flex flex-wrap gap-2 sm:left-4 sm:top-4">
             <span className="rounded-full border border-white/10 bg-black/45 px-2.5 py-1 font-display text-[10px] font-medium uppercase tracking-[0.14em] text-[var(--off-white)]/90 backdrop-blur-md">
               {feedMoodForLot(lot)}
@@ -222,7 +222,7 @@ function CategoryLotCard({ lot, index }: { lot: Lot; index: number }) {
           </div>
         </div>
 
-        <div className="border-t border-white/[0.06] bg-gradient-to-b from-[#0c0c0c] to-[#080808] px-4 pb-5 pt-4 sm:px-5 sm:pb-6">
+        <div className="border-t border-white/[0.06] bg-gradient-to-b from-surface to-void px-4 pb-5 pt-4 sm:px-5 sm:pb-6">
           <h2 className="font-serif text-xl font-normal italic leading-snug tracking-tight text-[var(--white)] sm:text-2xl">
             {lot.titre}
           </h2>
@@ -285,17 +285,17 @@ export function CategoriesExplorer() {
     sortKey !== "recommended";
 
   return (
-    <div className="min-h-screen bg-[#030303] px-4 pb-[calc(7rem+env(safe-area-inset-bottom))] pt-[max(5rem,env(safe-area-inset-top)+3.5rem)] sm:px-6 lg:pb-28">
+    <div className="min-h-screen bg-void px-4 pb-[calc(7rem+env(safe-area-inset-bottom))] pt-[max(5rem,env(safe-area-inset-top)+3.5rem)] sm:px-6 lg:pb-28">
       <header className="mx-auto max-w-4xl text-center sm:text-left">
         <p className="font-display text-[10px] font-semibold uppercase tracking-[0.28em] text-gold/90">
           Gaviom
         </p>
         <h1 className="mt-3 font-serif text-[clamp(1.9rem,5.5vw,3rem)] font-normal italic leading-[1.08] tracking-tight text-balance text-[var(--white)]">
-          Discover your next obsession
+          Live prize contests
         </h1>
         <p className="mx-auto mt-4 max-w-2xl font-display text-sm font-light leading-relaxed text-[var(--muted)] sm:mx-0">
-          Not a catalog, a moodboard of escapes, adrenaline, and quiet flexes. Glide the runway, then tune filters if
-          you want precision.
+          Pick a luxury prize, buy tickets, and enter the verified draw. One winner per contest , filmed and
+          announced on camera.
         </p>
         <div className="mt-6 flex flex-col items-center gap-2 sm:flex-row sm:items-baseline sm:gap-4">
           <p className="font-display text-sm text-[var(--muted)]">
@@ -305,12 +305,12 @@ export function CategoriesExplorer() {
               animate={{ opacity: 1, y: 0 }}
               className="inline-block font-medium text-[var(--white)]"
             >
-              {totalLots} stories live
+              {totalLots} contests live
             </motion.span>
           </p>
           <span className="hidden h-1 w-1 rounded-full bg-gold/40 sm:inline-block" aria-hidden />
           <p className="text-center font-display text-[11px] font-medium uppercase tracking-[0.16em] text-[var(--muted)] sm:text-left">
-            Dream-first drops · Verified outcomes underneath
+            Tickets from $19 · Verified random draws
           </p>
         </div>
         <Link
@@ -322,9 +322,9 @@ export function CategoriesExplorer() {
         </Link>
       </header>
 
-      <section className="mx-auto mt-10 max-w-6xl" aria-label="Curated moods">
+      <section className="mx-auto mt-10 max-w-6xl" aria-label="Contest categories">
         <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-gold/85">
-          Curated moods
+          Browse contests
         </p>
         <div className="mt-3 flex gap-2 overflow-x-auto pb-1 no-scrollbar sm:flex-wrap sm:overflow-visible">
           {EXPLORE_MOOD_PRESETS.map((m) => (

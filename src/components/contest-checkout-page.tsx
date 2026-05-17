@@ -151,8 +151,8 @@ export function ContestCheckoutPage({
   ]);
 
   return (
-    <div className="min-h-screen bg-[#030303] pb-[max(2rem,env(safe-area-inset-bottom))] text-[var(--off-white)]">
-      <header className="border-b border-white/[0.06] bg-[#030303]/95 backdrop-blur-md">
+    <div className="min-h-screen bg-void pb-[max(2rem,env(safe-area-inset-bottom))] text-[var(--off-white)]">
+      <header className="border-b border-white/[0.06] bg-void/95 backdrop-blur-md">
         <div className="mx-auto flex max-w-5xl items-center gap-3 px-4 py-4 sm:px-6">
           <Link
             href={`/concours/${contestSlug}`}

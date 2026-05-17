@@ -70,7 +70,7 @@ function ContestDetailBody({ lot, onClose }: { lot: Lot; onClose: () => void }) 
       </div>
 
       <div className="max-h-[calc(min(94dvh,920px)-52px)] overflow-y-auto overscroll-contain px-5 pb-[max(2.5rem,env(safe-area-inset-bottom,0px))] pt-4 sm:px-8 md:px-10">
-        <div className="relative mb-4 aspect-[4/3] w-full overflow-hidden rounded-2xl bg-[#141414]">
+        <div className="relative mb-4 aspect-[4/3] w-full overflow-hidden rounded-2xl bg-surface">
           {usesVideo ? (
             <video
               ref={sheetVideoRef}
@@ -94,7 +94,7 @@ function ContestDetailBody({ lot, onClose }: { lot: Lot; onClose: () => void }) 
                 priority
               />
               {gallery.length > 1 ? (
-                <div className="absolute inset-x-0 bottom-0 flex gap-1.5 overflow-x-auto bg-gradient-to-t from-black/70 to-transparent p-3 pt-8">
+                <div className="absolute inset-x-0 bottom-0 flex gap-1.5 overflow-x-auto bg-gradient-to-t from-void/70 to-transparent p-3 pt-8">
                   {gallery.map((src, i) => (
                     <button
                       key={src}

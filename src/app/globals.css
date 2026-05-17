@@ -3,31 +3,34 @@
 @tailwind utilities;
 
 :root {
-  /* v2 tokens */
-  --void: #050507;
+  /* v2 tokens , warm charcoal (luxury / contest), gold accents */
+  --void: #0f0e0c;
+  --navy-deep: #0f0e0c;
+  --surface: #1a1815;
+  --surface-raised: #252219;
+  --border: rgba(255, 255, 255, 0.08);
+  --gold: #f0c040;
+  --gold-muted: rgba(240, 192, 64, 0.18);
+  --gold-text: #f0c040;
+  --gold-glow: 0 0 12px rgba(240, 192, 64, 0.4);
+  --urgence: #e8402a;
+  --safe: #22c55e;
+  --info: #4a9eff;
+  --white: #ffffff;
+  --body: #f0ebe3;
+  --muted: rgba(240, 235, 227, 0.68);
+  --ghost: rgba(255, 255, 255, 0.14);
+  --gold-light: #f5d060;
+  --gold-dark: #c49a20;
+  --black: #0f0e0c;
+  --off-white: #f0ebe3;
+  --charcoal: #1a1815;
+  --smoke: #252219;
+  --red-urgence: #e8402a;
+  --background: #0f0e0c;
+  --foreground: #f0ebe3;
   /* Espace laissé au-dessus de la barre de navigation fixe (hauteur approx. + encoche). */
   --app-nav-pad-bottom: calc(5.25rem + env(safe-area-inset-bottom, 0px));
-  --surface: #111111;
-  --surface-raised: #1a1a1a;
-  --border: rgba(255, 255, 255, 0.08);
-  --gold: #c8a951;
-  --gold-muted: rgba(200, 169, 81, 0.15);
-  --gold-text: #f0d080;
-  --urgence: #e8402a;
-  --safe: #2ecc71;
-  --info: #4a9eff;
-  --white: #f5f3ee;
-  --muted: rgba(255, 255, 255, 0.45);
-  --ghost: rgba(255, 255, 255, 0.12);
-  --gold-light: #f0d080;
-  --gold-dark: #8b6914;
-  --black: #050507;
-  --off-white: #f5f3ee;
-  --charcoal: #111111;
-  --smoke: #1a1a1a;
-  --red-urgence: #e8402a;
-  --background: #050507;
-  --foreground: #f5f3ee;
 }
 
 html {
@@ -53,7 +56,7 @@ body {
   input[type="submit"],
   summary {
     touch-action: manipulation;
-    -webkit-tap-highlight-color: rgba(200, 169, 81, 0.12);
+    -webkit-tap-highlight-color: rgba(240, 192, 64, 0.14);
   }
 
   input,
@@ -170,8 +173,8 @@ body {
   opacity: 0.55;
   mix-blend-mode: soft-light;
   background-image:
-    radial-gradient(ellipse 120% 80% at 70% 15%, rgba(200, 169, 81, 0.14), transparent 52%),
-    radial-gradient(ellipse 90% 60% at 10% 75%, rgba(255, 255, 255, 0.06), transparent 48%);
+    radial-gradient(ellipse 120% 80% at 70% 15%, rgba(240, 192, 64, 0.12), transparent 52%),
+    radial-gradient(ellipse 90% 60% at 10% 75%, rgba(240, 192, 64, 0.06), transparent 48%);
   animation: dust-float 14s ease-in-out infinite;
 }
 

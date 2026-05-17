@@ -5,7 +5,7 @@ import { FeedTopBar } from "@/components/feed/feed-top-bar";
 import { FeedContainer } from "@/components/feed/feed-container";
 import { FeedMediaWarmup } from "@/components/feed/feed-media-warmup";
 import { FeedSocialTicker } from "@/components/feed/feed-social-ticker";
-import { FeedHowItWorksStrip } from "@/components/feed/feed-how-it-works-strip";
+import { FeedValuePropStrip } from "@/components/feed/feed-value-prop-strip";
 import { ContestDetailSheet } from "@/components/feed/contest-detail-sheet";
 import { useFeedStore } from "@/stores/feed-store";
 import { LOTS } from "@/lib/data";
@@ -44,7 +44,7 @@ export function FeedView() {
       <FeedMediaWarmup />
       <FeedTopBar />
       <FeedSocialTicker />
-      <FeedHowItWorksStrip />
+      <FeedValuePropStrip />
       <FeedContainer />
       <SlideDots />
       {detailLotId ? <ContestDetailSheet /> : null}

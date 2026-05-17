@@ -19,7 +19,7 @@ import { BRAND } from "@/lib/brand";
 
 const GOLD = "#C9A84C";
 const GOLD_SOFT = "#E8C97A";
-const BG = "#111111";
+const BG = "#0F0E0C";
 const TRACK = "#2A2A2A";
 
 function serif() {
@@ -123,7 +123,7 @@ export function EntryConfirmationPage({ contestId, searchParams, showAppleDiscla
       await navigator.clipboard.writeText(shareLine);
       toast.message("Link copied", {
         duration: 1600,
-        className: "border border-[#C9A84C]/40 bg-[#1A1A1A] text-[#C9A84C]",
+        className: "border border-[#C9A84C]/40 bg-surface text-[#C9A84C]",
       });
     } catch {
       toast.error("Couldn’t copy link");
@@ -135,7 +135,7 @@ export function EntryConfirmationPage({ contestId, searchParams, showAppleDiscla
       await navigator.clipboard.writeText(entry.entryNumber);
       toast.message("Entry number copied", {
         duration: 1600,
-        className: "border border-[#C9A84C]/40 bg-[#1A1A1A] text-[#C9A84C]",
+        className: "border border-[#C9A84C]/40 bg-surface text-[#C9A84C]",
       });
     } catch {
       toast.error("Copy failed");
@@ -214,7 +214,7 @@ export function EntryConfirmationPage({ contestId, searchParams, showAppleDiscla
         </header>
 
         {/* 2, Récap */}
-        <section className="mt-12 rounded-lg border border-[#C9A84C]/20 bg-[#1A1A1A] p-6 sm:p-8">
+        <section className="mt-12 rounded-lg border border-[#C9A84C]/20 bg-surface p-6 sm:p-8">
           <dl className="space-y-5">
             {recapRows.map(([key, label, value]) => (
               <div key={key} className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
@@ -339,7 +339,7 @@ export function EntryConfirmationPage({ contestId, searchParams, showAppleDiscla
 
         {confirmTab === "postal" && (
           <div
-            className="rounded-lg border border-white/[0.1] bg-[#1A1A1A] p-6 sm:p-8"
+            className="rounded-lg border border-white/[0.1] bg-surface p-6 sm:p-8"
             role="tabpanel"
             aria-label="Free postal entry"
           >
@@ -372,7 +372,7 @@ export function EntryConfirmationPage({ contestId, searchParams, showAppleDiscla
 
         {confirmTab === "subscription" && (
           <div
-            className="rounded-lg border border-white/[0.1] bg-[#1A1A1A] p-6 sm:p-8"
+            className="rounded-lg border border-white/[0.1] bg-surface p-6 sm:p-8"
             role="tabpanel"
             aria-label="Subscription"
           >
@@ -400,7 +400,7 @@ export function EntryConfirmationPage({ contestId, searchParams, showAppleDiscla
       </div>
 
       {/* 6, Footer */}
-      <footer className="mt-20 border-t border-[#C9A84C]/20 bg-[#0A0A0A] px-5 py-10 text-center">
+      <footer className="mt-20 border-t border-[#C9A84C]/20 bg-void px-5 py-10 text-center">
         <p className="text-[11px] leading-relaxed text-white/30">
           © 2026 Gaviom · All rights reserved
           <br />

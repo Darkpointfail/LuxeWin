@@ -22,7 +22,7 @@ export function TravelPrizeDetails({ travelCredit }: TravelPrizeDetailsProps) {
 
   return (
     <aside
-      className={`my-6 rounded-lg border border-[rgba(201,168,76,0.2)] bg-[#1A1A1A] p-6 ${dmSans.className}`}
+      className={`my-6 rounded-lg border border-[rgba(201,168,76,0.2)] bg-surface p-6 ${dmSans.className}`}
       aria-labelledby="travel-prize-details-heading"
     >
       <h2

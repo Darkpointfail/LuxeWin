@@ -6,14 +6,14 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const goldButtonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium tracking-wide touch-manipulation transition-transform duration-100 ease-out active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/50 focus-visible:ring-offset-2 focus-visible:ring-offset-luxe-black",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-sm font-bold uppercase tracking-[0.12em] touch-manipulation transition-[transform,box-shadow,background-color] duration-150 ease-out active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/50 focus-visible:ring-offset-2 focus-visible:ring-offset-void",
   {
     variants: {
       variant: {
         primary:
-          "bg-gold text-luxe-black shimmer-hover shadow-gold-glow hover:bg-gold-light",
+          "bg-gold text-void shimmer-hover shadow-gold-glow hover:bg-gold-light hover:shadow-gold-glow-lg",
         secondary:
-          "border border-gold/60 bg-transparent text-gold hover:bg-gold/10 shimmer-hover",
+          "border border-gold/50 bg-navy-card/80 text-gold shadow-gold-glow hover:bg-gold/10 shimmer-hover",
         ghost: "text-gold hover:bg-gold/10",
       },
       size: {

@@ -29,14 +29,14 @@ const dmMono = DM_Mono({
 
 export const metadata: Metadata = {
   title: `${BRAND.name} | ${BRAND.tagline}`,
-  description: `Premium experience drops on ${BRAND.name}. Verified winners, limited entries, members-only access. ${BRAND.tagline}`,
+  description: `${BRAND.name} , ${BRAND.tagline}. Buy tickets for luxury prizes, verified random draws, filmed winner announcements.`,
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#080808",
+  themeColor: "#0F0E0C",
   colorScheme: "dark",
 };
 
