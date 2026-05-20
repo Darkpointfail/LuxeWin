@@ -38,7 +38,7 @@ function ContestDetailBody({ lot, onClose }: { lot: Lot; onClose: () => void }) 
 
   const bonusNote =
     purchaseActions >= 3 && purchaseActions % 3 === 0
-      ? "Inner circle perk: +1 bonus pass layered on this tier."
+      ? "Bonus: +1 free ticket added to this order."
       : null;
 
   const mapHref =
@@ -138,7 +138,7 @@ function ContestDetailBody({ lot, onClose }: { lot: Lot; onClose: () => void }) 
             onTicketsChange={setSelectedQty}
             bonusNote={bonusNote}
             variant="luxe"
-            onlineCtaLabel="Continue to payment"
+            onlineCtaLabel="Pay now →"
             onOnlineConfirm={() => {
               onClose();
               router.push(`/concours/${lot.id}/checkout?qty=${selectedQty}`);

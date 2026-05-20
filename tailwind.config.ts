@@ -11,15 +11,15 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        void: "#0F0E0C",
+        void: "#141210",
         navy: {
-          DEFAULT: "#0F0E0C",
-          card: "#1A1815",
-          raised: "#252219",
+          DEFAULT: "#141210",
+          card: "#221E1A",
+          raised: "#2E2822",
         },
         surface: {
-          DEFAULT: "#1A1815",
-          raised: "#252219",
+          DEFAULT: "#221E1A",
+          raised: "#2E2822",
         },
         gold: {
           DEFAULT: "#F0C040",

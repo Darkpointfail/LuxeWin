@@ -16,6 +16,7 @@ import { EntryWayTabListConfirmation, type EntryWayTab } from "@/components/entr
 import { PostalEntryPanel, SubscriptionEntryPanel } from "@/components/entry-way-panels";
 import { cn } from "@/lib/utils";
 import { BRAND } from "@/lib/brand";
+import { SubscriptionUpsellCard } from "@/components/subscription-upsell-card";
 
 const GOLD = "#C9A84C";
 const GOLD_SOFT = "#E8C97A";
@@ -147,7 +148,7 @@ export function EntryConfirmationPage({ contestId, searchParams, showAppleDiscla
 
   const recapRows = useMemo(() => {
     const rows: [string, string, string][] = [
-      ["concours", "Experience drop", entry.contestName],
+      ["concours", "Contest", entry.contestName],
     ];
     if (entry.ticketQty != null && entry.ticketQty > 0) {
       rows.push(["qty", "Passes purchased", String(entry.ticketQty)]);
@@ -191,7 +192,7 @@ export function EntryConfirmationPage({ contestId, searchParams, showAppleDiscla
             transition={{ delay: 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className={cn(serif(), "mt-8 text-[2.25rem] font-light leading-tight tracking-[-0.02em] sm:text-4xl")}
           >
-            {isPaid ? "You’re officially in the draw." : "Free entry confirmed."}
+            {isPaid ? "You’re in! Good luck." : "Free entry confirmed."}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 8 }}
@@ -212,6 +213,12 @@ export function EntryConfirmationPage({ contestId, searchParams, showAppleDiscla
             )}
           </motion.p>
         </header>
+
+        {isPaid ? (
+          <div className="mt-10">
+            <SubscriptionUpsellCard lastPaidAmount={entry.amountPaidUsd ?? 5} />
+          </div>
+        ) : null}
 
         {/* 2, Récap */}
         <section className="mt-12 rounded-lg border border-[#C9A84C]/20 bg-surface p-6 sm:p-8">

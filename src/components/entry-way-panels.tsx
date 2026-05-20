@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { SUBSCRIPTION, subscriptionSavingsCopy } from "@/lib/conversion";
+import { formatUsd } from "@/lib/format-display";
 
 export function PostalEntryPanel({
   contestTitle,
@@ -22,40 +24,8 @@ export function PostalEntryPanel({
             : "font-display text-sm font-light leading-[1.65] text-[var(--muted)]"
         }
       >
-        No purchase is required to enter. You may submit one free entry by post, similar to operators like BOTB: send
-        a{" "}
-        <strong className={isConf ? "font-medium text-white/90" : "font-medium text-[var(--white)]/90"}>
-          handwritten or typed postcard
-        </strong>{" "}
-        (not a letter in an envelope, a single card) including all of the following in clear block capitals or
-        legible print:
-      </p>
-      <ul
-        className={
-          isConf
-            ? "list-inside list-disc space-y-1.5 font-[family-name:var(--font-corpo-sans),system-ui,sans-serif] text-sm font-light text-white/55"
-            : "list-inside list-disc space-y-1.5 font-display text-sm font-light text-[var(--muted)]"
-        }
-      >
-        <li>Your full legal name</li>
-        <li>Date of birth</li>
-        <li>Email address and mobile number</li>
-        <li>Full postal address (including postcode / ZIP)</li>
-        <li>The exact contest title: « {contestTitle} »</li>
-        <li>
-          A unique sentence of at least ten words explaining{" "}
-          <span className="italic">why you would like to win this prize</span> (do not copy a template, it must be your
-          own words).
-        </li>
-      </ul>
-      <p
-        className={
-          isConf
-            ? "font-[family-name:var(--font-corpo-sans),system-ui,sans-serif] text-sm font-light text-white/55"
-            : "font-display text-sm font-light leading-[1.65] text-[var(--muted)]"
-        }
-      >
-        Mail your postcard to:
+        No purchase required. Mail one free entry on a postcard with your details and the contest title: «{" "}
+        {contestTitle} ». Postmarked by {postalDeadline}.
       </p>
       <address
         className={
@@ -66,8 +36,6 @@ export function PostalEntryPanel({
       >
         Gaviom, Free Postal Entry (AMOE)
         <br />
-        Contest Services
-        <br />
         350 Fifth Avenue, Suite 4800
         <br />
         New York, NY 10118, USA
@@ -75,27 +43,11 @@ export function PostalEntryPanel({
       <p
         className={
           isConf
-            ? "font-[family-name:var(--font-corpo-sans),system-ui,sans-serif] text-sm font-light leading-[1.65] text-white/55"
-            : "font-display text-sm font-light leading-[1.65] text-[var(--muted)]"
-        }
-      >
-        <strong className={isConf ? "text-white/85" : "text-[var(--white)]/85"}>Rules:</strong> one free postal entry
-        per stamped postcard. Bulk or machine-generated mailings may be void. Entries must be{" "}
-        <strong className={isConf ? "text-white/85" : "text-[var(--white)]/85"}>
-          postmarked on or before {postalDeadline}
-        </strong>{" "}
-        (local post date). We are not responsible for late, lost, illegible, or undelivered mail. Postal entries receive
-        the same chance of winning as paid online entries for this contest, subject to the official rules and
-        eligibility.
-      </p>
-      <p
-        className={
-          isConf
             ? "font-mono text-[11px] leading-relaxed text-white/40"
             : "font-mono text-[11px] leading-relaxed text-[var(--muted)]"
         }
       >
-        Tip: photograph your postcard before posting. Keep proof of postage.
+        Same odds as paid entries. See official rules for full AMOE requirements.
       </p>
     </div>
   );
@@ -107,6 +59,8 @@ export function SubscriptionEntryPanel({ variant = "feed" }: { variant?: "feed" 
       ? "inline-flex h-11 items-center justify-center rounded-lg border px-5 font-[family-name:var(--font-corpo-sans),system-ui,sans-serif] text-sm font-medium transition-colors"
       : "inline-flex h-11 items-center justify-center rounded-xl border px-5 font-display text-sm font-medium transition-colors";
 
+  const perEntry = SUBSCRIPTION.monthlyPrice / SUBSCRIPTION.entriesPerMonth;
+
   return (
     <div className="space-y-4">
       <p
@@ -116,19 +70,20 @@ export function SubscriptionEntryPanel({ variant = "feed" }: { variant?: "feed" 
             : "font-display text-sm font-light leading-[1.65] text-[var(--muted)]"
         }
       >
-        Subscribe to Gaviom and receive recurring contest entries each billing period, ideal if you play across several
-        drops. Your subscription is managed from your account; you can change or cancel according to the subscription
-        terms. Eligibility and prize rules are the same as for other entry methods.
+        {subscriptionSavingsCopy(5)} Get {SUBSCRIPTION.entriesPerMonth} automatic entries every contest for{" "}
+        {formatUsd(SUBSCRIPTION.monthlyPrice)}/mo, about {formatUsd(perEntry)} per entry.
       </p>
-      <p
+      <ul
         className={
           variant === "confirmation"
-            ? "font-[family-name:var(--font-corpo-sans),system-ui,sans-serif] text-sm font-light text-white/55"
-            : "font-display text-sm font-light text-[var(--muted)]"
+            ? "space-y-2 text-sm text-white/70"
+            : "space-y-2 text-sm text-[var(--muted)]"
         }
       >
-        Subscription entries are credited automatically; you will see them alongside your other entries.
-      </p>
+        <li>✓ Never miss a draw</li>
+        <li>✓ Cancel anytime</li>
+        <li>✓ Same verified random draws</li>
+      </ul>
       <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
         <Link
           href="/profil"
@@ -139,18 +94,7 @@ export function SubscriptionEntryPanel({ variant = "feed" }: { variant?: "feed" 
               : "border-gold/35 bg-gold/10 text-gold hover:border-gold/55 hover:bg-gold/15"
           )}
         >
-          Manage subscription
-        </Link>
-        <Link
-          href="/comment-ca-marche"
-          className={cn(
-            linkBase,
-            variant === "confirmation"
-              ? "border-white/15 text-white/60 hover:border-white/25 hover:text-white/85"
-              : "border-[var(--border)] text-[var(--muted)] hover:border-white/20 hover:text-[var(--white)]"
-          )}
-        >
-          How it works
+          Get {SUBSCRIPTION.label} →
         </Link>
       </div>
     </div>

@@ -33,11 +33,42 @@ export const LOTS: Lot[] = [
     publishedAt: tPublished(18),
     media: {
       posterUrl:
-        "https://images.unsplash.com/photo-1623107935331-7164fb0d6978?w=2400&q=92",
+        "https://images.unsplash.com/photo-1620243508389-116aa0454233?w=2400&q=92",
       photos: [
-        "https://images.unsplash.com/photo-1623107935331-7164fb0d6978?w=2400&q=92",
+        "https://images.unsplash.com/photo-1620243508389-116aa0454233?w=2400&q=92",
+        "https://images.unsplash.com/photo-1771775606196-70dccc0d9bde?w=2400&q=92",
         "https://images.unsplash.com/photo-1755875341361-73fc174ecc51?w=2400&q=92",
         "https://images.unsplash.com/photo-1668261929011-4ade8c225292?w=2400&q=92",
+      ],
+      carousel: [
+        {
+          type: "image",
+          src: "https://images.unsplash.com/photo-1620243508389-116aa0454233",
+          alt: "Welcome to Fabulous Las Vegas sign",
+          label: "Prize",
+          caption: "Main character weekend.",
+        },
+        {
+          type: "image",
+          src: "https://images.unsplash.com/photo-1771775606196-70dccc0d9bde",
+          alt: "Slot machines in a Las Vegas casino",
+          label: "Experience",
+          caption: "High stakes. Neon nights.",
+        },
+        {
+          type: "image",
+          src: "https://images.unsplash.com/photo-1755875341361-73fc174ecc51",
+          alt: "Neon Las Vegas boulevard",
+          label: "Lifestyle",
+          caption: "Your next story starts here.",
+        },
+        {
+          type: "image",
+          src: "https://images.unsplash.com/photo-1668261929011-4ade8c225292",
+          alt: "Rooftop pool and city lights",
+          label: "Lifestyle",
+          caption: "Pool mornings hit different.",
+        },
       ],
     },
     location: {
@@ -84,7 +115,39 @@ export const LOTS: Lot[] = [
         "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=1920&q=90",
       photos: [
         "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=1920&q=90",
-        "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=1920&q=90",
+        "https://images.unsplash.com/photo-1632582593898-949a5f8d76df?w=1920&q=90",
+        "https://images.unsplash.com/photo-1699892131416-ffe93f41e977?w=1920&q=90",
+        "https://images.unsplash.com/photo-1727093493864-0bcbd16c7e6d?w=1920&q=90",
+      ],
+      carousel: [
+        {
+          type: "image",
+          src: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab",
+          alt: "iPhone Pro hero close-up",
+          label: "Prize",
+          caption: "The upgrade everyone notices.",
+        },
+        {
+          type: "image",
+          src: "https://images.unsplash.com/photo-1632582593898-949a5f8d76df",
+          alt: "iPhone Pro back on a clean white surface, product shot",
+          label: "Experience",
+          caption: "Factory-sealed. Ready to flex.",
+        },
+        {
+          type: "image",
+          src: "https://images.unsplash.com/photo-1699892131416-ffe93f41e977",
+          alt: "Premium close-up of iPhone camera module",
+          label: "Lifestyle",
+          caption: "Shot on Pro. Looks unfair.",
+        },
+        {
+          type: "image",
+          src: "https://images.unsplash.com/photo-1727093493864-0bcbd16c7e6d",
+          alt: "Titanium iPhone Pro on a minimal studio surface",
+          label: "Winner POV",
+          caption: "Imagine this notification: You won.",
+        },
       ],
     },
     description:
@@ -120,6 +183,46 @@ export const LOTS: Lot[] = [
       photos: [
         "https://images.unsplash.com/photo-1663783755373-3b4e67a4202c?w=2400&q=92",
         "https://images.unsplash.com/photo-1692735678510-03d976e6565e?w=2400&q=92",
+        "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=2400&q=92",
+        "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=2400&q=92",
+        "https://images.unsplash.com/photo-1559599746-8823b46149de?w=2400&q=92",
+      ],
+      carousel: [
+        {
+          type: "image",
+          src: "https://images.unsplash.com/photo-1663783755373-3b4e67a4202c",
+          alt: "Luxury cruise ship at sea",
+          label: "Prize",
+          caption: "Seven nights. Zero alarm clocks.",
+        },
+        {
+          type: "image",
+          src: "https://images.unsplash.com/photo-1692735678510-03d976e6565e",
+          alt: "Cruise balcony suite ocean view",
+          label: "Experience",
+          caption: "Balcony mornings hit different.",
+        },
+        {
+          type: "image",
+          src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5",
+          alt: "Ocean sunset from deck",
+          label: "Lifestyle",
+          caption: "Your timeline, upgraded.",
+        },
+        {
+          type: "image",
+          src: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d",
+          alt: "Couple enjoying cruise travel",
+          label: "Lifestyle",
+          caption: "Main character at sea.",
+        },
+        {
+          type: "image",
+          src: "https://images.unsplash.com/photo-1559599746-8823b46149de",
+          alt: "Fine dining on cruise ship",
+          label: "Experience",
+          caption: "Not a dream. A verified draw.",
+        },
       ],
     },
     location: {
@@ -168,6 +271,46 @@ export const LOTS: Lot[] = [
       photos: [
         "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=1920&q=90",
         "https://images.unsplash.com/photo-1681869916819-cb81574a02e7?w=1920&q=90",
+        "https://images.unsplash.com/photo-1503376780353-7ad26323d7ab?w=1920&q=90",
+        "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1920&q=90",
+        "https://images.unsplash.com/photo-1558618042-3c8c76ca7d13?w=1920&q=90",
+      ],
+      carousel: [
+        {
+          type: "image",
+          src: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e",
+          alt: "Supercar close-up front angle",
+          label: "Prize",
+          caption: "Adrenaline, verified.",
+        },
+        {
+          type: "image",
+          src: "https://images.unsplash.com/photo-1681869916819-cb81574a02e7",
+          alt: "Driver inside supercar cockpit",
+          label: "Winner POV",
+          caption: "Hands on. Heart racing.",
+        },
+        {
+          type: "image",
+          src: "https://images.unsplash.com/photo-1503376780353-7ad26323d7ab",
+          alt: "Supercar on race track",
+          label: "Experience",
+          caption: "The lap you'll replay forever.",
+        },
+        {
+          type: "image",
+          src: "https://images.unsplash.com/photo-1558618042-3c8c76ca7d13",
+          alt: "Racing helmet and gloves detail",
+          label: "Experience",
+          caption: "Suit up. Show up.",
+        },
+        {
+          type: "image",
+          src: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7",
+          alt: "Supercar in cinematic garage lighting",
+          label: "Lifestyle",
+          caption: "One ticket. One winner.",
+        },
       ],
     },
     location: {
@@ -257,13 +400,13 @@ export const EXPLORE_MOOD_PRESETS: ExploreMoodPreset[] = [
 
 /** Rotating footer micro-lines on feed slides, emotional, non-transactional. */
 export const FEED_WHISPER_LINES = [
-  "One ticket. One winner. Could be you.",
-  "Every entry gets a number , one number wins the prize.",
-  "Verified random draw when entries close.",
-  "Prize filmed and announced on camera.",
-  "Free postal entry available , see official rules.",
-  "Stack tickets to improve your odds.",
-  "Premium prizes. Legitimate draws. Real winners.",
+  "What if that was your name on the winner video?",
+  "It's just a few bucks. The prize isn't.",
+  "Thousands are entering right now.",
+  "Verified draw. Real winner. Posted on camera.",
+  "Free postal entry available (see rules).",
+  "Stack tickets = better odds.",
+  "No purchase necessary. 18+ US residents.",
 ] as const;
 
 /** UI filters, category order, framed as discovery, not inventory. */

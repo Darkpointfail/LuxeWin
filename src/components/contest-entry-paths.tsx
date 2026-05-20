@@ -52,7 +52,7 @@ export function ContestEntryPaths({
   onOnlineConfirm,
   quantities = DEFAULT_QTY,
   bonusNote,
-  onlineCtaLabel = "Confirm",
+  onlineCtaLabel = "Pay now →",
   entryTab: entryTabProp,
   onEntryTabChange,
   variant = "default",
@@ -83,10 +83,10 @@ export function ContestEntryPaths({
       {!hideTitleBlock && (
         <div className="pb-1">
           <p className="font-display text-[10px] font-semibold uppercase tracking-[0.2em] text-gold">
-            Step into this drop
+            Get your tickets
           </p>
           <p className="mt-1 font-display text-xs text-[var(--muted)]">
-            Online checkout, complimentary mail-in option, or membership paths, every route stays documented.
+            Pay online in seconds. Free postal entry always available.
           </p>
         </div>
       )}

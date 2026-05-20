@@ -64,7 +64,6 @@ export function FeedContainer({ className }: { className?: string }) {
           key={lot.id}
           lot={lot}
           slideIndex={i}
-          activeIndex={activeIndex}
           isActive={i === activeIndex}
           onExpand={() => openDetail(lot.id)}
         />

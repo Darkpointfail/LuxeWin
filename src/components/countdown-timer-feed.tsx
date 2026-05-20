@@ -13,9 +13,16 @@ type Props = {
   className?: string;
   /** Compte à rebours discret : pas de rouge agressif sous 24h. */
   variant?: "default" | "luxe";
+  /** Chip in feed header: no legend, smaller type. */
+  compact?: boolean;
 };
 
-export function CountdownTimerFeed({ endDate, className, variant = "default" }: Props) {
+export function CountdownTimerFeed({
+  endDate,
+  className,
+  variant = "default",
+  compact = false,
+}: Props) {
   const [now, setNow] = useState(() => Date.now());
   const [shake, setShake] = useState(false);
   const lastShake = useRef(0);
@@ -70,12 +77,16 @@ export function CountdownTimerFeed({ endDate, className, variant = "default" }: 
     );
   }
 
-  const display = `${pad2(days)}:${pad2(hours)}:${pad2(minutes)}:${pad2(seconds)}`;
+  const display = compact
+    ? days > 0
+      ? `${days}d ${pad2(hours)}:${pad2(minutes)}:${pad2(seconds)}`
+      : `${pad2(hours)}:${pad2(minutes)}:${pad2(seconds)}`
+    : `${pad2(days)}:${pad2(hours)}:${pad2(minutes)}:${pad2(seconds)}`;
 
   return (
     <div
       className={cn(
-        "font-mono text-sm font-medium tabular-nums tracking-tight",
+        compact ? "inline-flex items-center font-mono tabular-nums" : "font-mono text-sm font-medium tabular-nums tracking-tight",
         luxe
           ? cn(
               under1h &&
@@ -109,9 +120,15 @@ export function CountdownTimerFeed({ endDate, className, variant = "default" }: 
           {display}
         </motion.span>
       </AnimatePresence>
-      <span className="mt-0.5 block text-[9px] font-normal uppercase tracking-widest text-[var(--muted)]">
-        DD : HH : MM : SS
-      </span>
+      {compact ? (
+        <span className="ml-1.5 text-[10px] font-display font-medium uppercase tracking-wide text-white/70">
+          left
+        </span>
+      ) : (
+        <span className="mt-0.5 block text-[9px] font-normal uppercase tracking-widest text-[var(--muted)]">
+          DD : HH : MM : SS
+        </span>
+      )}
     </div>
   );
 }

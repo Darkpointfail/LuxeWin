@@ -4,10 +4,10 @@
 
 :root {
   /* v2 tokens , warm charcoal (luxury / contest), gold accents */
-  --void: #0f0e0c;
-  --navy-deep: #0f0e0c;
-  --surface: #1a1815;
-  --surface-raised: #252219;
+  --void: #141210;
+  --navy-deep: #141210;
+  --surface: #221e1a;
+  --surface-raised: #2e2822;
   --border: rgba(255, 255, 255, 0.08);
   --gold: #f0c040;
   --gold-muted: rgba(240, 192, 64, 0.18);

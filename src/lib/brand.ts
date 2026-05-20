@@ -3,7 +3,7 @@
 export const BRAND = {
   name: "Gaviom",
   tagline: "Premium prize draws",
-  taglineSecondary: "Buy tickets · Win luxury prizes",
+  taglineSecondary: "Win big. Pay small.",
   membership: "Gaviom Club",
   corpo: "Gaviom Corpo",
   siteUrl: "https://gaviom.com",

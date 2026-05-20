@@ -7,6 +7,14 @@ export type LotPartner = {
   note: number;
 };
 
+export type PrizeCarouselItem = {
+  type: "image" | "video";
+  src: string;
+  alt: string;
+  label?: string;
+  caption?: string;
+};
+
 export type LotMedia = {
   /** Absent = hero photo only (Tesla, MacBook, etc.). */
   videoUrl?: string;
@@ -14,6 +22,8 @@ export type LotMedia = {
   posterUrl: string;
   /** 1 = vitesse normale ; valeur plus basse = ralenti (ex. 0.65). */
   playbackRate?: number;
+  /** Cinematic feed carousel (4–6 shots per prize). Falls back to poster + photos if omitted. */
+  carousel?: PrizeCarouselItem[];
 };
 
 export type LotLocation = {

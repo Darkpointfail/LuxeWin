@@ -1,5 +1,6 @@
 import type { Lot } from "@/lib/types";
 import { lotHeroPhoto, lotUsesVideo } from "@/lib/lot-media";
+import { getLotCarouselItems, preloadCarouselItems } from "@/lib/prize-carousel-media";
 
 const warmedVideos = new Set<string>();
 
@@ -49,6 +50,9 @@ export function lotFeedHeroPhoto(lot: Lot): string {
 /** Preload hero media for the first slides (runs once on feed mount). */
 export function preloadLotMedia(lot: Lot): void {
   if (typeof window === "undefined") return;
+
+  const carousel = getLotCarouselItems(lot);
+  preloadCarouselItems(carousel, 0);
 
   const poster = lotFeedPoster(lot);
   const posterImg = new window.Image();
